@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Prestamo } from '../types';
+import { useEffect, useState, useCallback } from 'react';
+import type { Prestamo } from '../types';
 import { obtenerPrestamosActivos, devolverPrestamo, actualizarEstadoEquipo } from '../services/api';
 
 export const PrestamosActivos = () => {
   const [prestamos, setPrestamos] = useState<Prestamo[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    cargar();
-  }, []);
-
-  const cargar = async () => {
+  const cargar = useCallback(async () => {
     setLoading(true);
     const data = await obtenerPrestamosActivos();
     setPrestamos(data);
     setLoading(false);
-  };
+  }, []);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    cargar();
+  }, [cargar]);
 
   const manejarDevolucion = async (idPrestamo: number, equipoId: number) => {
     await devolverPrestamo(idPrestamo);

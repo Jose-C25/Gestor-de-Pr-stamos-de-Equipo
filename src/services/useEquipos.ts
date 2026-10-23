@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Equipo } from '../types';
+import { useState, useEffect, useCallback } from 'react';
+import type { Equipo } from '../types';
 import { obtenerEquipos } from './api';
 
 export const useEquipos = () => {
@@ -7,9 +7,9 @@ export const useEquipos = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const cargar = async () => {
+  const cargar = useCallback(async () => {
     try {
-      setLoading(true);
+     setLoading(true);
       setError(null);
       const data = await obtenerEquipos();
       setEquipos(data);
@@ -18,11 +18,12 @@ export const useEquipos = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     cargar();
-  }, []);
+  }, [cargar]);
 
   return { equipos, loading, error, cargar, setEquipos };
 };

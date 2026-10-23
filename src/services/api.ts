@@ -1,4 +1,4 @@
-import { Equipo, Prestamo } from '../types';
+import type { Equipo, Prestamo } from '../types';
 
 const API_URL = import.meta.env.VITE_API_URL;
 

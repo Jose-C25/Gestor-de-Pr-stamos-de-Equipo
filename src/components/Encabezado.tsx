@@ -1,9 +1,8 @@
-import React from 'react';
-import { Equipo } from '../types';
+import type { Equipo } from '../types';
 
 interface Props { equipos: Equipo[]; }
 
-export const Encabezado: React.FC<Props> = ({ equipos }) => {
+export const Encabezado = ({ equipos }: Props) => {
   const disponibles = equipos.filter(e => e.disponible).length;
   return (
     <header style={{ padding: '1rem', backgroundColor: '#eee' }}>

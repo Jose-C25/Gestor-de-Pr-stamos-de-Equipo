@@ -1,13 +1,73 @@
 {
   "equipos": [
-    { "id": 1, "nombre": "iPad Pro 11", "categoria": "Tablet", "disponible": true },
-    { "id": 2, "nombre": "Galaxy Tab S8", "categoria": "Tablet", "disponible": true },
-    { "id": 3, "nombre": "Sony A7 III", "categoria": "Cámara", "disponible": true },
-    { "id": 4, "nombre": "Canon EOS R", "categoria": "Cámara", "disponible": true },
-    { "id": 5, "nombre": "Shure SM7B", "categoria": "Micrófono", "disponible": true },
-    { "id": 6, "nombre": "Rode NT1", "categoria": "Micrófono", "disponible": true },
-    { "id": 7, "nombre": "iPad Mini", "categoria": "Tablet", "disponible": true },
-    { "id": 8, "nombre": "Lumix GH5", "categoria": "Cámara", "disponible": false }
+    {
+      "id": "1",
+      "nombre": "iPad Pro 11",
+      "categoria": "Tablet",
+      "disponible": true
+    },
+    {
+      "id": "2",
+      "nombre": "Galaxy Tab S8",
+      "categoria": "Tablet",
+      "disponible": false
+    },
+    {
+      "id": "3",
+      "nombre": "Sony A7 III",
+      "categoria": "Cámara",
+      "disponible": true
+    },
+    {
+      "id": "4",
+      "nombre": "Canon EOS R",
+      "categoria": "Cámara",
+      "disponible": true
+    },
+    {
+      "id": "5",
+      "nombre": "Shure SM7B",
+      "categoria": "Micrófono",
+      "disponible": true
+    },
+    {
+      "id": "6",
+      "nombre": "Rode NT1",
+      "categoria": "Micrófono",
+      "disponible": true
+    },
+    {
+      "id": "7",
+      "nombre": "iPad Mini",
+      "categoria": "Tablet",
+      "disponible": false
+    },
+    {
+      "id": "8",
+      "nombre": "Lumix GH5",
+      "categoria": "Cámara",
+      "disponible": false
+    }
   ],
-  "prestamos": []
+  "prestamos": [
+    {
+      "equipoId": "7",
+      "solicitante": "José Chub",
+      "carne": "231",
+      "fechaLimite": "2026-10-21",
+      "fechaPrestamo": "2026-10-22T20:19:49.896Z",
+      "devuelto": false,
+      "id": "uBI-Oe-df64"
+    },
+    {
+      "equipoId": "2",
+      "solicitante": "Juanito Alcachofa",
+      "carne": "12313123",
+      "fechaLimite": "2026-10-24",
+      "fechaPrestamo": "2026-10-22T21:44:49.103Z",
+      "devuelto": false,
+      "id": "NYDpOUc0xAc"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
